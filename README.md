@@ -30,13 +30,40 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Describe the biggest difference between `.forEach` & `.map`.
 
+The biggest difference between .forEach() and .map() is that .forEach() does NOT return a new array. It calls the function provided on each value in the array, mutating the array. .map() DOES return a new array while NOT affecting the original array that it was called upon.
+
 2. What is the difference between a function and a method?
+
+The difference between a function and a method is that a method is a value of an object and can only be called in association to an object. For example, if you have an object called Person and a method called speak(), the only way to call the method is Person.speak(). If speak() was a function, you would just have to call speak() since it isn't attached to an object.
 
 3. What is closure?
 
+Closure is when an inner function that is wrapped around by an outer function has access to variables outside of its scope.
+
+example:
+`function yeah() {
+    let value = "hello";
+    function nah() {
+        console.log(value);
+    };
+    nah();
+}
+yeah();
+`
+
 4. Describe the four rules of the 'this' keyword.
 
+Rule #1: If in the global scope, 'this' is the Window/Console object.
+Rule #2: If a function is called with a dot preceding it, 'this' is the object to the left of the dot.
+Rule #3: When a constructor is used, 'this' refers to the specific instance returned by the constructor.
+Rule #4: If .call/.apply or .bind is called, 'this' is stated explicitly.
+
 5. Why do we need super() in an extended class?
+
+super() is needed in an extended class because it is calling up to the base class. It is the equivalent of Subclass.prototype = Object.create(Baseclass.prototype). It is actually abstracting Object.create and letting the Baseclass know to be aware of the Subclass.
+
+
+
 
 ## Project Set up
 
